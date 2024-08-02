@@ -43,3 +43,84 @@ ROOT
             nmodel.cpython-311.pyc
             urlutil.cpython-310.pyc
 </pre>
+# API仕様
+
+### サジェスト検索(入力補完)
+* 概要</br>
+検索ボックスにアーティスト名を入力するごとに名前候補のリストを返す
+* URL</br>
+/suggest
+* パラメーター</br>
+    <table>
+        <thead>
+            <tr>
+                <th>パラメータ名</th> <th>説明</th>
+            </tr>
+        </thead>
+            <tr>
+                <td> suggest </td> <td>アーティス名の部分集合</td>
+            </tr>
+    </table>
+### アーティスト詳細情報
+* 概要</br>
+アーティスト名の詳細情報と代表曲をリリース。リリースはYoutubeURL
+* URL</br>
+/get_artist_detail_with_releases
+* パラメーター</br>
+    <table>
+        <thead>
+            <tr>
+                <th>パラメータ名</th> <th>説明</th>
+            </tr>
+        </thead>
+            <tr>
+                <td> artist_name_trance_remove_kakko </td> <td>アーティスト名（日本語）</td>
+            </tr>
+            <tr>
+                <td> artist_name_kakko_none_en </td> <td>>アーティスト名（アルファベット）</td>
+            </tr>
+            <tr>
+                <td> artistID </td> <td>アーティストID</td>
+            </tr>
+    </table>
+### 近傍アーティスト
+* 概要</br>
+アーティストの近傍アーティストを返す
+* URL</br>
+/nn_neighbor_artist
+* パラメーター</br>
+    <table>
+        <thead>
+            <tr>
+                <th>パラメータ名</th> <th>説明</th>
+            </tr>
+        </thead>
+            <tr>
+                <td> artist_name_trance_remove_kakko </td> <td>>アーティスト名（日本語）</td>
+            </tr>
+            <tr>
+                <td> artist_name_kakko_none_en </td> <td>>アーティスト名（アルファベット）</td>
+            </tr>
+            <tr>
+                <td> artistID </td> <td>アーティストID</td>
+            </tr>
+    </table>
+### メインディスプレイ
+* 概要</br>
+ランダムにアーティストを複数表示用に返す
+* URL</br>
+/maindisp
+* パラメーター</br>
+    <table>
+        <thead>
+            <tr>
+                <th>パラメータ名</th> <th>説明</th>
+            </tr>
+        </thead>
+            <tr>
+                <td>  </td> <td>なし</td>
+            </tr>
+    </table>
+
+
+
