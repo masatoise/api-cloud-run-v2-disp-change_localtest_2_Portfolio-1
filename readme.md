@@ -8,7 +8,38 @@
 !["Neo4j badge"](https://img.shields.io/badge/-Neo4j-a.svg?logo=neo4j&style=flat)
 !["Elasticsearch badge"](https://img.shields.io/badge/-Elasticsearch-005571.svg?logo=Elasticsearch&style=flat)
 !["Ubuntu badge"](https://img.shields.io/badge/-Ubuntu-E95420.svg?logo=Elasticsearch&style=flat)
-# 全体図
+# 全体構成図
 ![deawio](https://github.com/masatoise/api-cloud-run-v2-disp-change_localtest_2_Portfolio/blob/image/backend.backend.drawio.png)
-
-
+# バックエンドプロジェクト構成
+<pre>
+ROOT
+|
+|-app.py ＃Webアプリのメイン部分リクエストを直接受け付ける
+│-client_test.py
+│-Dockerfile　＃CloudRunというサーバーレス環境でコンテナを実行するための設定ファイル
+│-flask_validate.py
+│-readme.md
+│-requirements.txt　＃ビルドのタイミングでインストールするpythonモジュール一覧
+│
+├─elasticsearch_model
+│  │  emodel.py　＃DBへアクセスするためのコアモジュール
+│  │  helper_for_disp.py　＃DBの検索結果をレイアウトに合わせるためのヘルパー
+│  │  helper_for_search.py　＃DBの検索をするためのヘルパー
+│  │
+│  └─__pycache__
+│          emodel.cpython-310.pyc
+│          emodel.cpython-311.pyc
+│          helper_for_disp.cpython-310.pyc
+│          helper_for_disp.cpython-311.pyc
+│          helper_for_search.cpython-310.pyc
+│          helper_for_search.cpython-311.pyc
+│
+└─neo4j_model
+    │  nmodel.py　＃グラフDBへアクセスするためのコアモジュール
+    │  urlutil.py　＃DBの検索結果をレイアウトに合わせたりするためのヘルパー
+    │
+    └─__pycache__
+            nmodel.cpython-310.pyc
+            nmodel.cpython-311.pyc
+            urlutil.cpython-310.pyc
+</pre>
